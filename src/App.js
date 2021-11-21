@@ -1,19 +1,23 @@
-import "./App.css";
+// import React, { useState } from "react";
 
-import { Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-function App() {
+import Home from "./routes/home";
+import FormIndex from "./routes/form_index";
+import NewForm from "./routes/new_form";
+import FormPage from "./routes/form_page";
+
+const App = () => {
   return (
-    <div>
-      <header>
-        <nav>
-          <Link to="/login">Login</Link>
-          <br></br>
-          <Link to="/join">Join</Link>
-        </nav>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/forms" element={<FormIndex />} />
+        <Route path="/forms/:id" element={<FormPage />} />
+        <Route path="/forms/new" element={<NewForm />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;

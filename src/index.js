@@ -1,23 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
-import App from "./App";
 
-import Home from "./routes/home";
-import FormIndex from "./routes/form_index";
-import NewForm from "./routes/new_form";
+import App from './App'
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/forms" element={<FormIndex />} />
-        <Route path="/forms/new" element={<NewForm />} />
-        <Route path="/forms/new" element={<NewForm />} />
-      </Routes>
-    </BrowserRouter>
+    <App />
+    
   </React.StrictMode>,
   document.getElementById("root")
 );
