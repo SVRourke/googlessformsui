@@ -2,14 +2,22 @@ import React, { useState } from "react";
 import LoginForm from "../forms/Login";
 import SignUpForm from "../forms/SignUp";
 
+import { Container, Row, Col } from "react-bootstrap";
+
 function Home() {
   return (
     <div>
-      <header>
+      <Container>
         <h1>HOME</h1>
-        <LoginForm />
-        <SignUpForm />
-      </header>
+        <Row>
+          <Col>
+            <LoginForm />
+          </Col>
+          <Col>
+            <SignUpForm />
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }
