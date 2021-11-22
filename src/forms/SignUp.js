@@ -1,6 +1,15 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
+
+import { useSelector, useDispatch } from "react-redux";
+import { login, create } from "../redux/userSlice";
+
+import { createUser } from "../lib/api";
+
 const SignUpForm = () => {
+  const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+
   const [inputs, setInputs] = useState({
     username: "",
     email: "",
@@ -13,18 +22,13 @@ const SignUpForm = () => {
 
   const submit = async (e) => {
     e.preventDefault();
+    const resp = await createUser(inputs);
 
-    const options = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ user: inputs }),
-    };
-
-    const req = await fetch("http://localhost:3000/users", options);
-
-    const resp = await req.json();
+    
     console.log(resp);
   };
+
+  console.log(user);
 
   return (
     <Form onChange={updateForm} onSubmit={submit}>
