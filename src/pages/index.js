@@ -1,10 +1,6 @@
 import Home from "./home";
 import FormIndex from "./form_index";
 import NewForm from "./new_form";
-import FormPage from "./form_page";
+import ShowPage from "./show_page";
 
-export { Home, FormIndex, NewForm, FormPage };
-
-// Login / Sign Up
-// New Form
-
+export { Home, FormIndex, NewForm, ShowPage };
